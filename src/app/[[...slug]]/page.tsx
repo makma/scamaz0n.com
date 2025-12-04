@@ -390,6 +390,8 @@ export default function LoginPage() {
                   <div className="flex flex-col items-center gap-1.5 mt-1">
                     <a
                       href={fingerprintDashboardUrl}
+                      target="_blank"
+                      rel="noreferrer"
                       className="scmz-button whitespace-nowrap px-4 py-1.5 text-[11px]"
                     >
                       Explore identification event
@@ -399,6 +401,8 @@ export default function LoginPage() {
                     </span>
                     <a
                       href={fingerprintRulesUrl}
+                      target="_blank"
+                      rel="noreferrer"
                       className="scmz-button whitespace-nowrap px-4 py-1.5 text-[11px] bg-transparent text-amber-200 border border-amber-400/80 shadow-none hover:bg-amber-500/10 hover:text-amber-100"
                     >
                       Configure rules that stop malicious users
