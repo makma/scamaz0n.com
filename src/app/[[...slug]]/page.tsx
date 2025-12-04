@@ -398,7 +398,7 @@ export default function LoginPage() {
                       rel="noreferrer"
                       className="st-button whitespace-nowrap px-4 py-1.5 text-[11px]"
                     >
-                      [EXPLORE EVENT]
+                      [EXPLORE CREATURE]
                     </a>
                     <span className="text-[10px] text-[#deb887]/60 font-mono uppercase tracking-wide">
                       {">"} THEN:
