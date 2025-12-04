@@ -147,36 +147,37 @@ export default function LoginPage() {
         </header>
 
         {prettyRoute === "login" && (
-          <section className="mb-6 rounded-xl border border-slate-500/40 bg-slate-900/70 px-4 py-3 text-xs text-slate-200 flex flex-col gap-1.5">
+          <section className="mb-6 rounded-xl border border-amber-400/70 bg-gradient-to-r from-amber-500/15 via-slate-900/90 to-amber-500/10 px-4 py-4 text-xs sm:text-sm text-amber-50 flex flex-col gap-2 shadow-lg shadow-amber-500/25">
             <div className="flex items-center justify-between gap-2">
-              <span className="font-mono tracking-wide uppercase text-[11px] text-slate-400">
-                Surprise Visitor Detected
+              <span className="font-mono tracking-wide uppercase text-[11px] text-amber-200">
+                You Found the Scamaz0n Sandbox
               </span>
-              <span className="rounded-full border border-amber-400/60 bg-amber-500/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-200">
-                No account yet?
+              <span className="rounded-full border border-amber-300/70 bg-amber-400/25 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-950">
+                Step 1: Get Access
               </span>
             </div>
             <p className="leading-snug">
-              We didn&apos;t really expect anyone to stumble onto this URL
-              directly. This Scamaz0n sandbox is meant to be auto‑provisioned
-              for new{" "}
+              We didn&apos;t really expect anyone to just wander onto this URL.
+              This Scamaz0n login is normally auto‑provisioned for new{" "}
               <span className="font-mono text-scmz-orange">Fingerprint</span>{" "}
-              users so they can see identification and smart signals in
-              action without deploying anything.
+              users so they can see identification and smart signals in action
+              without touching production code.
             </p>
             <p className="leading-snug">
-              If you don&apos;t have an account yet, head over to{" "}
+              If you don&apos;t have a Fingerprint account yet, your next move
+              is simple:{" "}
               <a
                 href="https://fingerprint.com"
                 target="_blank"
                 rel="noreferrer"
-                className="underline decoration-dotted underline-offset-2 text-scmz-orange"
+                className="font-semibold underline decoration-dotted underline-offset-2 text-scmz-orange"
               >
-                fingerprint.com
-              </a>{" "}
-              to sign up. Once you&apos;re in, we&apos;ll auto‑wire a private
-              sandbox route like this one to your dashboard so you can tune
-              rules, run experiments, and watch events roll in.
+                go to fingerprint.com and sign up
+              </a>
+              . Once you&apos;re in, we&apos;ll auto‑wire a private sandbox
+              route like this one straight into your dashboard so you can tune
+              rules, run experiments, and watch events roll in for your own
+              “fraudulent” logins.
             </p>
           </section>
         )}
@@ -323,23 +324,23 @@ export default function LoginPage() {
                 </div>
 
                 <div className="pt-2 border-t border-slate-800/60 mt-2 flex items-center justify-between gap-3">
-                  <p className="text-[11px] text-slate-400 leading-snug max-w-[70%]">
+                  <p className="text-[11px] text-slate-300 leading-snug max-w-[70%]">
                     {isSuccessful ? (
                       <>
                         This{" "}
                         <span className="font-mono text-emerald-300">
                           {httpStatus}
                         </span>{" "}
-                        response slipped through —{" "}
-                        <span className="font-semibold text-emerald-300">
-                          but should it?
+                        response is currently allowed —{" "}
+                        <span className="font-semibold text-emerald-200">
+                          but should this bot really be welcome?
                         </span>{" "}
-                        Flip over to your{" "}
+                        Open your{" "}
                         <span className="font-mono">Fingerprint</span>{" "}
-                        dashboard and Rules Engine and start weaponizing
-                        smart signals: ship a rule, drop a label, or trigger a
-                        challenge so the next shady login like this gets zapped
-                        before it ever “succeeds”.
+                        dashboard and Rules Engine to turn these signals into
+                        protection: ship a rule, add a label, or plug in a
+                        challenge so the next shady login like this never gets
+                        a &quot;success&quot;.
                       </>
                     ) : (
                       <>
