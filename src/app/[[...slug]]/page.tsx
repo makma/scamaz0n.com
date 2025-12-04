@@ -129,9 +129,12 @@ export default function LoginPage() {
       <main className="scmz-shell">
         <header className="scmz-header">
           <div className="flex items-center gap-2">
-            <span className="scmz-logo">
-              sc<span className="text-scmz-orange">a</span>maz0n
-            </span>
+            <div className="flex items-end gap-1">
+              <span className="scmz-logo">
+                sc<span className="text-scmz-orange">a</span>maz0n
+              </span>
+              <span className="scmz-logo-mark" />
+            </div>
             <span className="scmz-tagline">
               fake login • real Fingerprint signals
             </span>
@@ -288,7 +291,7 @@ export default function LoginPage() {
                 Fingerprint Session Inspector
               </h2>
               <div className={`badge ${statusColor}`}>
-                <span className="font-mono text-[11px]">
+                <span className="font-mono text-[11px] whitespace-nowrap">
                   {httpStatus == null ? "NO REQUEST YET" : `HTTP ${httpStatus}`}
                 </span>
               </div>
