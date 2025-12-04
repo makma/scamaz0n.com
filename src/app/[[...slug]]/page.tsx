@@ -265,22 +265,6 @@ export default function LoginPage() {
                 {loading ? "Contacting Fingerprint…" : "Sign in"}
               </button>
 
-              <p className="text-[11px] leading-snug text-slate-500">
-                This is a{" "}
-                <span className="font-semibold text-scmz-orange-dark">
-                  sandbox-only
-                </span>{" "}
-                environment. Credentials are ignored; what matters is how{" "}
-                <span className="font-mono">Fingerprint</span> sees this device
-                and session. Depending on the rules you configure in the{" "}
-                <span className="font-mono">Rules Engine</span>, this may turn
-                into{" "}
-                <span className="font-mono text-red-500">403 Forbidden</span>,{" "}
-                <span className="font-mono text-yellow-500">429</span>, or
-                other responses — the UI always renders whatever JSON comes
-                back in the same format.
-              </p>
-
               {responseBody && (
                 <div className="mt-3 rounded-md border border-emerald-500/40 bg-emerald-50/80 px-3 py-2 text-xs">
                   <div className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-700">
@@ -366,20 +350,6 @@ export default function LoginPage() {
                         <span className="block mb-0.5 font-semibold text-emerald-300">
                           This {httpStatus} response is currently allowed — but
                           should this session really be welcome?
-                        </span>
-                        <span className="block">
-                          Combine{" "}
-                          <span className="font-mono text-emerald-200">
-                            Fingerprint
-                          </span>{" "}
-                          device intelligence with your own risk tolerance and
-                          business understanding in the Rules Engine so the next
-                          shady login like this lines up with{" "}
-                          <span className="font-semibold">
-                            your
-                            &nbsp;definition
-                          </span>{" "}
-                          of &quot;allowed&quot; — not the attacker&apos;s.
                         </span>
                       </>
                     ) : (

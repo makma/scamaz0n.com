@@ -94,6 +94,7 @@ body {
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
 }
 
+
 .scmz-card.bg-slate-950 {
   /* Dark variant used for the inspector panel */
   background: radial-gradient(circle at top left, #020617, #020617);
