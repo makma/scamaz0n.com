@@ -266,18 +266,24 @@ export default function LoginPage() {
               </button>
 
               {responseBody && (
-                <div className="mt-3 rounded-md border border-emerald-500/40 bg-emerald-50/80 px-3 py-2 text-xs">
-                  <div className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-700">
-                    Scamaz0n notice
+                <div
+                  className={`mt-3 rounded-md px-3 py-2 text-xs shadow-sm border ${
+                    isSuccessful
+                      ? "border-emerald-500 bg-emerald-50"
+                      : "border-red-500/70 bg-red-50"
+                  }`}
+                >
+                  <div className="mb-1 flex items-center gap-2">
+                    <span className="inline-flex items-center rounded-full bg-black/5 px-2 py-0.5 text-[10px] font-mono uppercase tracking-wide text-slate-700">
+                      Scamaz0n notice
+                    </span>
                   </div>
                   <div
-                    className={`text-[11px] ${
-                      isSuccessful ? "text-emerald-900" : "text-red-800"
+                    className={`text-[12px] sm:text-[13px] font-semibold ${
+                      isSuccessful ? "text-emerald-800" : "text-red-800"
                     }`}
                   >
-                    <span className="font-semibold">
-                      {String(responseBody.message ?? "—")}
-                    </span>
+                    {String(responseBody.message ?? "—")}
                   </div>
                 </div>
               )}
