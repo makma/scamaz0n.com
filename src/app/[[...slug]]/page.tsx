@@ -151,7 +151,7 @@ export default function LoginPage() {
               <span className="scmz-logo-mark" />
             </div>
             <span className="scmz-tagline">
-              fake login • real Fingerprint signals
+              fake login • real Fingerprint device intelligence
             </span>
           </div>
           <div className="scmz-env-pill">
