@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #020617;
+  --foreground: #e5e7eb;
+
+  --scmz-orange: #ff9900;
+  --scmz-orange-dark: #e88a00;
+  --scmz-blue-deep: #020617;
+  --scmz-blue-soft: #0f172a;
+  --scmz-border-soft: rgba(148, 163, 184, 0.3);
 }
 
 @theme inline {
@@ -14,13 +20,224 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #020617;
+    --foreground: #e5e7eb;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    var(--font-geist-sans), sans-serif;
+}
+
+/* === Scamaz0n x Fingerprint theme === */
+
+.bg-scmz-grid {
+  background-color: var(--scmz-blue-deep);
+  background-image: radial-gradient(circle at 1px 1px, #1e293b 1px, transparent 0),
+    radial-gradient(circle at 1px 1px, #020617 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.scmz-shell {
+  width: 100%;
+  max-width: 1120px;
+  border-radius: 1.25rem;
+  padding: 1.75rem 1.75rem 2rem;
+  background: radial-gradient(circle at top left, #1d283a 0, #020617 55%);
+  box-shadow: 0 40px 90px rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.scmz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.75rem;
+  gap: 1rem;
+}
+
+.scmz-logo {
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #f9fafb;
+}
+
+.scmz-tagline {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #9ca3af;
+}
+
+.scmz-env-pill {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.1rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0f172a, #020617);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+/* Cards & Inputs */
+
+.scmz-card {
+  border-radius: 1rem;
+  padding: 1.5rem 1.5rem 1.6rem;
+  background: linear-gradient(145deg, #f9fafb, #e5e7eb);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+}
+
+.scmz-card.bg-slate-950 {
+  border-color: rgba(148, 163, 184, 0.4);
+}
+
+.scmz-input {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.9);
+  background-color: #f9fafb;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.875rem;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.scmz-input::placeholder {
+  color: #9ca3af;
+}
+
+.scmz-input:focus {
+  border-color: var(--scmz-orange);
+  box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.5),
+    0 0 0 4px rgba(249, 115, 22, 0.18);
+  background-color: #ffffff;
+}
+
+/* Buttons */
+
+.scmz-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  border-radius: 999px;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--scmz-orange), #f97316);
+  color: #111827;
+  box-shadow: 0 10px 25px rgba(248, 166, 62, 0.5);
+  transition: transform 0.12s ease, box-shadow 0.12s ease,
+    filter 0.12s ease, background 0.12s ease, opacity 0.12s ease;
+}
+
+.scmz-button:hover {
+  filter: brightness(1.02);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(248, 166, 62, 0.6);
+}
+
+.scmz-button:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(248, 166, 62, 0.5);
+}
+
+.scmz-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* JSON Panel */
+
+.scmz-json {
+  max-height: 260px;
+  overflow: auto;
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.7rem;
+  line-height: 1.4;
+  padding: 0.9rem 0.9rem;
+  border-radius: 0.75rem;
+  background: radial-gradient(circle at top left, #020617, #020617);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  color: #e5e7eb;
+}
+
+/* Status badges */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.badge-success {
+  background: rgba(16, 185, 129, 0.16);
+  border-color: rgba(16, 185, 129, 0.7);
+  color: #6ee7b7;
+}
+
+.badge-warning {
+  background: rgba(234, 179, 8, 0.18);
+  border-color: rgba(234, 179, 8, 0.8);
+  color: #facc15;
+}
+
+.badge-danger {
+  background: rgba(248, 113, 113, 0.18);
+  border-color: rgba(248, 113, 113, 0.8);
+  color: #fca5a5;
+}
+
+.badge-neutral {
+  background: rgba(148, 163, 184, 0.2);
+  border-color: rgba(148, 163, 184, 0.7);
+  color: #e5e7eb;
+}
+
+/* Utility */
+
+.text-scmz-orange {
+  color: var(--scmz-orange);
+}
+
+.text-scmz-orange-dark {
+  color: var(--scmz-orange-dark);
+}
+
+/* Small-screen tweaks */
+
+@media (max-width: 768px) {
+  .scmz-shell {
+    padding: 1.25rem 1.1rem 1.4rem;
+    border-radius: 1rem;
+  }
+
+  .scmz-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .scmz-card {
+    padding: 1.25rem 1.1rem 1.35rem;
+  }
 }
