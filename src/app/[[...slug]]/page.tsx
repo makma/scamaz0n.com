@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { useParams, usePathname } from "next/navigation";
+import { useParams, usePathname, useSearchParams } from "next/navigation";
 
 type LoginResponse = {
   message: string;
@@ -53,11 +53,15 @@ function randomPassword() {
 export default function LoginPage() {
   const pathname = usePathname() || "/";
   const params = useParams<{ slug?: string[] }>();
+  const searchParams = useSearchParams();
   const apiPath = `/api${pathname === "/" ? "" : pathname}`;
 
-  // TODO: replace this placeholder with a concrete dashboard deep-link
-  // once it's known (e.g., including a session or visitor id).
-  const fingerprintDashboardUrl = "#";
+  const subId = searchParams.get("sub_id");
+  const fingerprintDashboardUrl = subId
+    ? `https://dashboard-git-hackathon-personal-ruleset-flow-playground-fp-pro.vercel.app/workspaces/${encodeURIComponent(
+        subId
+      )}/events?latest`
+    : "#";
 
   const [email, setEmail] = useState(() => randomEmail());
   const [password, setPassword] = useState(() => randomPassword());
@@ -118,6 +122,8 @@ export default function LoginPage() {
       ? "badge-neutral"
       : httpStatus >= 200 && httpStatus < 300
       ? "badge-success"
+      : httpStatus === 403
+      ? "badge-danger"
       : httpStatus >= 400 && httpStatus < 500
       ? "badge-warning"
       : "badge-danger";
