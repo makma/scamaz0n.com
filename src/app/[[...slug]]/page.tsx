@@ -324,23 +324,22 @@ export default function LoginPage() {
                 </div>
 
                 <div className="pt-2 border-t border-slate-800/60 mt-2 flex items-center justify-between gap-3">
-                  <p className="text-[11px] text-slate-300 leading-snug max-w-[70%]">
+                  <p className="text-[11px] text-slate-100 leading-snug max-w-[70%]">
                     {isSuccessful ? (
                       <>
-                        This{" "}
-                        <span className="font-mono text-emerald-300">
-                          {httpStatus}
-                        </span>{" "}
-                        response is currently allowed —{" "}
-                        <span className="font-semibold text-emerald-200">
-                          but should this bot really be welcome?
-                        </span>{" "}
-                        Open your{" "}
-                        <span className="font-mono">Fingerprint</span>{" "}
-                        dashboard and Rules Engine to turn these signals into
-                        protection: ship a rule, add a label, or plug in a
-                        challenge so the next shady login like this never gets
-                        a &quot;success&quot;.
+                        <span className="block mb-0.5 font-semibold text-emerald-300">
+                          This {httpStatus} response is currently allowed — but
+                          should this session really be welcome?
+                        </span>
+                        <span className="block">
+                          Turn this into{" "}
+                          <span className="font-mono text-emerald-200">
+                            Fingerprint
+                          </span>{" "}
+                          value: jump into the Rules Engine and ship a rule so
+                          the next shady login like this never gets a
+                          &quot;success&quot;.
+                        </span>
                       </>
                     ) : (
                       <>

@@ -95,6 +95,8 @@ body {
 }
 
 .scmz-card.bg-slate-950 {
+  /* Dark variant used for the inspector panel */
+  background: radial-gradient(circle at top left, #020617, #020617);
   border-color: rgba(148, 163, 184, 0.4);
 }
 
