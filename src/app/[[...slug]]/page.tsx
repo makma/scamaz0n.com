@@ -280,6 +280,23 @@ export default function LoginPage() {
                 other responses — the UI always renders whatever JSON comes
                 back in the same format.
               </p>
+
+              {responseBody && (
+                <div className="mt-3 rounded-md border border-emerald-500/40 bg-emerald-50/80 px-3 py-2 text-xs">
+                  <div className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-700">
+                    Scamaz0n notice
+                  </div>
+                  <div
+                    className={`text-[11px] ${
+                      isSuccessful ? "text-emerald-900" : "text-red-800"
+                    }`}
+                  >
+                    <span className="font-semibold">
+                      {String(responseBody.message ?? "—")}
+                    </span>
+                  </div>
+                </div>
+              )}
             </form>
           </div>
 
