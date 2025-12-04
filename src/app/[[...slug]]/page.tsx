@@ -57,11 +57,20 @@ export default function LoginPage() {
   const apiPath = `/api${pathname === "/" ? "" : pathname}`;
 
   const subId = searchParams.get("sub_id");
+  const rulesetId = searchParams.get("ruleset_id");
+
   const fingerprintDashboardUrl = subId
     ? `https://dashboard-git-hackathon-personal-ruleset-flow-playground-fp-pro.vercel.app/workspaces/${encodeURIComponent(
         subId
       )}/events?latest`
     : "#";
+
+  const fingerprintRulesUrl =
+    subId && rulesetId
+      ? `https://dashboard-git-hackathon-personal-ruleset-flow-playground-fp-pro.vercel.app/workspaces/${encodeURIComponent(
+          subId
+        )}/rulesets/${encodeURIComponent(rulesetId)}`
+      : "#";
 
   const [email, setEmail] = useState(() => randomEmail());
   const [password, setPassword] = useState(() => randomPassword());
@@ -388,12 +397,12 @@ export default function LoginPage() {
                     <span className="text-[10px] text-slate-400 font-mono uppercase tracking-wide">
                       And then…
                     </span>
-                    <button
-                      type="button"
+                    <a
+                      href={fingerprintRulesUrl}
                       className="scmz-button whitespace-nowrap px-4 py-1.5 text-[11px] bg-transparent text-amber-200 border border-amber-400/80 shadow-none hover:bg-amber-500/10 hover:text-amber-100"
                     >
                       Configure rules that stop malicious users
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
