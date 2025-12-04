@@ -146,6 +146,41 @@ export default function LoginPage() {
           </div>
         </header>
 
+        {prettyRoute === "login" && (
+          <section className="mb-6 rounded-xl border border-slate-500/40 bg-slate-900/70 px-4 py-3 text-xs text-slate-200 flex flex-col gap-1.5">
+            <div className="flex items-center justify-between gap-2">
+              <span className="font-mono tracking-wide uppercase text-[11px] text-slate-400">
+                Surprise Visitor Detected
+              </span>
+              <span className="rounded-full border border-amber-400/60 bg-amber-500/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-200">
+                No account yet?
+              </span>
+            </div>
+            <p className="leading-snug">
+              We didn&apos;t really expect anyone to stumble onto this URL
+              directly. This Scamaz0n sandbox is meant to be auto‑provisioned
+              for new{" "}
+              <span className="font-mono text-scmz-orange">Fingerprint</span>{" "}
+              users so they can see identification and smart signals in
+              action without deploying anything.
+            </p>
+            <p className="leading-snug">
+              If you don&apos;t have an account yet, head over to{" "}
+              <a
+                href="https://fingerprint.com"
+                target="_blank"
+                rel="noreferrer"
+                className="underline decoration-dotted underline-offset-2 text-scmz-orange"
+              >
+                fingerprint.com
+              </a>{" "}
+              to sign up. Once you&apos;re in, we&apos;ll auto‑wire a private
+              sandbox route like this one to your dashboard so you can tune
+              rules, run experiments, and watch events roll in.
+            </p>
+          </section>
+        )}
+
         <section className="grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start">
           {/* Login Card */}
           <div className="scmz-card">
