@@ -62,7 +62,7 @@ export default function LoginPage() {
   const fingerprintDashboardUrl = subId
     ? `https://dashboard-git-hackathon-personal-ruleset-flow-playground-fp-pro.vercel.app/workspaces/${encodeURIComponent(
         subId
-      )}/events?latest`
+      )}/events?latest=true`
     : "#";
 
   const fingerprintRulesUrl =
