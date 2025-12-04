@@ -138,7 +138,7 @@ export default function LoginPage() {
           </div>
           <div className="scmz-env-pill">
             <span className="text-xs uppercase tracking-wide text-slate-400">
-              Customer Sandbox Route
+              User Sandbox Route
             </span>
             <span className="text-xs font-mono text-slate-100">
               /{prettyRoute}
@@ -332,13 +332,18 @@ export default function LoginPage() {
                           should this session really be welcome?
                         </span>
                         <span className="block">
-                          Turn this into{" "}
+                          Combine{" "}
                           <span className="font-mono text-emerald-200">
                             Fingerprint
                           </span>{" "}
-                          value: jump into the Rules Engine and ship a rule so
-                          the next shady login like this never gets a
-                          &quot;success&quot;.
+                          device intelligence with your own risk tolerance and
+                          business rules in the Rules Engine so the next shady
+                          login like this matches{" "}
+                          <span className="font-semibold">
+                            your
+                            &nbsp;definition
+                          </span>{" "}
+                          of &quot;allowed&quot; — not the attacker&apos;s.
                         </span>
                       </>
                     ) : (
