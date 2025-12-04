@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Scamaz0n Flow Sandbox",
+  title: "SecureHawkins - Hawkins High School Portal",
   description:
-    "Zero-friction Fingerprint Flow onboarding: a fake Scamaz0n login backed by real device intelligence.",
+    "Hawkins High School security portal protected by Fingerprint device intelligence. Defending against the Upside-Down world.",
 };
 
 export default function RootLayout({

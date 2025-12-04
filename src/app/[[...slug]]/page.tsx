@@ -9,45 +9,42 @@ type LoginResponse = {
 };
 
 function randomEmail() {
-  const inboxes = [
-    "headless.bot",
-    "selenium.runner",
-    "tor-browser-user",
-    "incognito-tab",
-    "vpn-enjoyer",
-    "proxy.chain",
-    "cookie-tamperer",
-    "suspicious-login",
-    "high-risk-device",
-    "fraud-monitor",
-    "velocity-spammer",
-    "suspicious.behavior",
-    "device-farm-node",
-    "credential-stuffer",
+  const names = [
+    "mike.wheeler",
+    "eleven.jane",
+    "dustin.henderson",
+    "lucas.sinclair",
+    "will.byers",
+    "max.mayfield",
+    "steve.harrington",
+    "nancy.wheeler",
+    "jonathan.byers",
+    "joyce.byers",
   ];
   const domains = [
-    "torland.net",
-    "vpntunnels.io",
-    "incognito.cloud",
-    "bot-traffic.lol",
-    "risky-login.dev",
-    "tamperlab.app",
+    "hawkinslab.gov",
+    "hawkinsindiana.net",
+    "starcourt.mall",
+    "upsidedown.io",
+    "hawkinshigh.edu",
   ];
-  const name = inboxes[Math.floor(Math.random() * inboxes.length)];
+  const name = names[Math.floor(Math.random() * names.length)];
   const domain = domains[Math.floor(Math.random() * domains.length)];
   return `${name}@${domain}`;
 }
 
 function randomPassword() {
   const phrases = [
-    "correct-horse-battery-staple",
-    "password123",
-    "hunter2",
-    "letmein!",
-    "fingerprint-ftw",
+    "hawkins1983",
+    "eleven011",
+    "upsidedown",
+    "demogorgon",
+    "hawkinslab",
+    "starcourt",
+    "vecna1986",
   ];
   const suffix = Math.floor(100 + Math.random() * 900);
-  return `${phrases[Math.floor(Math.random() * phrases.length)]}-${suffix}`;
+  return `${phrases[Math.floor(Math.random() * phrases.length)]}${suffix}`;
 }
 
 export default function LoginPage() {
@@ -140,96 +137,101 @@ export default function LoginPage() {
     httpStatus != null && httpStatus >= 200 && httpStatus < 300;
 
   return (
-    <div className="min-h-screen bg-scmz-grid flex items-center justify-center px-4">
-      <main className="scmz-shell">
-        <header className="scmz-header">
+    <div className="min-h-screen bg-st-grid flex items-center justify-center px-4">
+      <main className="st-shell">
+        <header className="st-header">
           <div className="flex items-center gap-2">
             <div className="flex items-end gap-1">
-              <span className="scmz-logo">
-                sc<span className="text-scmz-orange">a</span>maz0n
+              <span className="st-logo">
+                Secure<span className="text-[#deb887]">Hawkins</span>
               </span>
-              <span className="scmz-logo-mark" />
+              <span className="st-logo-mark">[H]</span>
             </div>
-            <span className="scmz-tagline">
-              fake login • real Fingerprint device intelligence
+            <span className="st-tagline">
+              hawkins high school • protecting from the upside-down world
             </span>
           </div>
-          <div className="scmz-env-pill">
-            <span className="text-xs uppercase tracking-wide text-slate-400">
+          <div className="st-env-pill">
+            <span className="text-xs uppercase tracking-wide text-[#deb887]/80">
               User Sandbox Route
             </span>
-            <span className="text-xs font-mono text-slate-100">
+            <span className="text-xs font-mono text-[#deb887]">
               /{prettyRoute}
             </span>
           </div>
         </header>
 
         {prettyRoute === "login" && (
-          <section className="mb-6 rounded-xl border border-amber-400/70 bg-gradient-to-r from-amber-500/15 via-slate-900/90 to-amber-500/10 px-4 py-4 text-xs sm:text-sm text-amber-50 flex flex-col gap-2 shadow-lg shadow-amber-500/25">
-            <div className="flex items-center justify-between gap-2">
-              <span className="font-mono tracking-wide uppercase text-[11px] text-amber-200">
-                You Found the Scamaz0n Sandbox
-              </span>
-              <span className="rounded-full border border-amber-300/70 bg-amber-400/25 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-950">
-                Step 1: Get Access
-              </span>
+          <section className="mb-6 border-2 border-[#deb887] bg-black px-4 py-4 text-xs sm:text-sm text-[#deb887] flex flex-col gap-2 font-mono">
+            <div className="border-b border-[#deb887] pb-2 mb-2">
+              <div className="flex items-center justify-between gap-2">
+                <span className="font-mono tracking-wide uppercase text-[11px] text-[#deb887]">
+                  {"╔═══ HAWKINS HIGH SCHOOL PORTAL ═══╗"}
+                </span>
+                <span className="text-[10px] font-mono uppercase tracking-wide text-[#deb887] border border-[#deb887] px-2 py-0.5">
+                  [PROTECTED]
+                </span>
+              </div>
             </div>
-            <p className="leading-snug">
-              We didn&apos;t really expect anyone to just wander onto this URL.
-              This Scamaz0n login is normally auto‑provisioned for new{" "}
-              <span className="font-mono text-scmz-orange">Fingerprint</span>{" "}
-              users so they can see identification and smart signals in action
-              without touching production code.
-            </p>
-            <p className="leading-snug">
-              If you don&apos;t have a Fingerprint account yet, your next move
-              is simple:{" "}
-              <a
-                href="https://fingerprint.com"
-                target="_blank"
-                rel="noreferrer"
-                className="font-semibold underline decoration-dotted underline-offset-2 text-scmz-orange"
-              >
-                go to fingerprint.com and sign up
-              </a>
-              . Once you&apos;re in, we&apos;ll auto‑wire a private sandbox
-              route like this one straight into your dashboard so you can tune
-              rules, run experiments, and watch events roll in for your own
-              “fraudulent” logins.
-            </p>
+            <div className="space-y-2 text-[#deb887]">
+              <p className="leading-snug">
+                {">"} Welcome to SecureHawkins. This login portal protects Hawkins High School
+                from threats from the Upside-Down world. Powered by{" "}
+                <span className="font-mono text-[#deb887]">Fingerprint</span>{" "}
+                device intelligence, you can experience fraud detection and device
+                identification protecting our students and faculty.
+              </p>
+              <p className="leading-snug">
+                {">"} If you don&apos;t have a Fingerprint account yet,{" "}
+                <a
+                  href="https://fingerprint.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-semibold underline decoration-dotted underline-offset-2 text-[#deb887] hover:text-[#c9a068]"
+                >
+                  sign up at fingerprint.com
+                </a>
+                . Once you&apos;re in, we&apos;ll automatically provision a private
+                sandbox route like this one in your dashboard, allowing you to
+                configure security rules, test fraud detection, and monitor
+                identification events to keep the Upside-Down at bay.
+              </p>
+            </div>
+            <div className="border-t border-[#deb887] pt-2 mt-2 text-[10px] text-[#deb887]/60">
+              {"╚═══════════════════════════════════════════════════════════════╝"}
+            </div>
           </section>
         )}
 
         <section className="grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start">
           {/* Login Card */}
-          <div className="scmz-card">
-            <div className="flex items-center justify-between mb-6">
-              <h1 className="text-2xl font-semibold text-slate-900">
-                Sign in to your{" "}
-                <span className="text-scmz-orange">Scamaz0n</span> account
+          <div className="st-card">
+            <div className="flex items-center justify-between mb-6 border-b-2 border-black pb-3">
+              <h1 className="text-2xl font-bold text-slate-900 font-mono tracking-wide">
+                {">"} ACCESS{" "}
+                <span className="text-[#deb887]">HAWKINS HIGH SCHOOL</span>
               </h1>
               <div className="flex flex-col items-end gap-1">
-                <span className="text-[11px] font-mono uppercase text-slate-400">
-                  Fingerprint Sandbox
+                <span className="text-[11px] font-mono uppercase text-slate-500">
+                  [FINGERPRINT SANDBOX]
                 </span>
-                <span className="rounded-full bg-slate-900/90 px-3 py-1 text-[11px] font-mono text-emerald-300 border border-emerald-400/30">
-                  Fingerprint Connected
+                <span className="bg-black px-3 py-1 text-[11px] font-mono font-bold text-[#deb887] border-2 border-[#deb887] uppercase tracking-wide">
+                  [ONLINE]
                 </span>
               </div>
             </div>
 
-            <div className="mb-4 space-y-1 text-xs">
+            <div className="mb-4 space-y-1 text-xs font-mono border-2 border-black p-2 bg-black/5">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-amber-800">
-                  Scamaz0n Prime-ish
+                <span className="bg-black px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-[#deb887] border-2 border-[#deb887]">
+                  [PROTECTED ACCESS]
                 </span>
-                <span className="text-[11px] text-amber-700">
-                  Free phishing delivery in 2–3 business clicks.
+                <span className="text-[11px] text-slate-700 font-semibold">
+                  {">"} Upside-Down protection active.
                 </span>
               </div>
-              <div className="text-[11px] text-slate-500">
-                ★★★★☆ 4.9 fake security rating · 2,048,312 compromised carts
-                and counting.
+              <div className="text-[11px] text-slate-600 font-mono">
+                {">"} STATUS: [ACTIVE] | RATING: 5.0 | DETECTION: 99.9% | BREACHES: 0
               </div>
             </div>
 
@@ -237,9 +239,9 @@ export default function LoginPage() {
               <div className="space-y-2">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-slate-800"
+                  className="block text-sm font-mono font-medium text-slate-800 uppercase tracking-wide"
                 >
-                  Email (fake, but observable)
+                  Email Address
                 </label>
                 <input
                   id="email"
@@ -248,17 +250,17 @@ export default function LoginPage() {
                   autoComplete="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="scmz-input"
-                  placeholder="victim@totally-legit-bank.com"
+                  className="st-input"
+                  placeholder="user@hawkinslab.gov"
                 />
               </div>
 
               <div className="space-y-2">
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium text-slate-800"
+                  className="block text-sm font-mono font-medium text-slate-800 uppercase tracking-wide"
                 >
-                  Password (also fake)
+                  Password
                 </label>
                 <input
                   id="password"
@@ -267,38 +269,42 @@ export default function LoginPage() {
                   autoComplete="current-password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="scmz-input"
-                  placeholder="correct-horse-battery-staple-123"
+                  className="st-input"
+                  placeholder="••••••••••••"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="scmz-button w-full"
+                className="st-button w-full"
               >
-                {loading ? "Contacting Fingerprint…" : "Sign in"}
+                {loading ? "[CONNECTING...]" : "[ACCESS SYSTEM]"}
               </button>
 
               {responseBody && (
                 <div
-                  className={`mt-3 rounded-md px-3 py-2 text-xs shadow-sm border ${
+                  className={`mt-3 px-3 py-2 text-xs border-2 font-mono ${
                     isSuccessful
-                      ? "border-emerald-500 bg-emerald-50"
-                      : "border-red-500/70 bg-red-50"
+                      ? "border-[#00ff00] bg-black text-[#00ff00]"
+                      : "border-[#ff0000] bg-black text-[#ff0000]"
                   }`}
                 >
-                  <div className="mb-1 flex items-center gap-2">
-                    <span className="inline-flex items-center rounded-full bg-black/5 px-2 py-0.5 text-[10px] font-mono uppercase tracking-wide text-slate-700">
-                      Scamaz0n notice
+                  <div className="mb-1.5 flex items-center gap-2">
+                    <span className={`inline-flex items-center px-2.5 py-0.5 text-[10px] font-mono uppercase tracking-wide font-bold border-2 ${
+                      isSuccessful
+                        ? "bg-black text-[#00ff00] border-[#00ff00]"
+                        : "bg-black text-[#ff0000] border-[#ff0000]"
+                    }`}>
+                      [NOTICE]
                     </span>
                   </div>
                   <div
-                    className={`text-[12px] sm:text-[13px] font-semibold ${
-                      isSuccessful ? "text-emerald-800" : "text-red-800"
+                    className={`text-[12px] sm:text-[13px] font-bold tracking-wide font-mono ${
+                      isSuccessful ? "text-[#00ff00]" : "text-[#ff0000]"
                     }`}
                   >
-                    {String(responseBody.message ?? "—")}
+                    {">"} {String(responseBody.message ?? "-")}
                   </div>
                 </div>
               )}
@@ -306,106 +312,104 @@ export default function LoginPage() {
           </div>
 
           {/* Response / Telemetry Panel */}
-          <div className="scmz-card bg-slate-950 text-slate-50">
-            <div className="h-px w-full bg-gradient-to-r from-sky-500/40 via-violet-500/60 to-emerald-400/40 mb-3" />
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-sm font-semibold tracking-wide uppercase text-slate-300">
-                Fingerprint Session Inspector
-              </h2>
-              <div className={`badge ${statusColor}`}>
+          <div className="st-card bg-black text-[#deb887]">
+            <div className="border-b-2 border-[#deb887] mb-3 pb-2">
+              <div className="flex items-center justify-between">
+                <h2 className="text-sm font-mono font-bold tracking-wide uppercase text-[#deb887]">
+                  {"═══ FINGERPRINT SESSION INSPECTOR ═══"}
+                </h2>
+              <div className={`st-badge ${statusColor}`}>
                 <span className="font-mono text-[11px] whitespace-nowrap">
                   {httpStatus == null ? "NO REQUEST YET" : `HTTP ${httpStatus}`}
                 </span>
               </div>
+              </div>
             </div>
 
             {errorText && (
-              <div className="mb-3 rounded-md border border-red-500/40 bg-red-500/10 px-3 py-2 text-xs text-red-50">
-                <div className="font-mono mb-1 text-[11px]">CLIENT ERROR</div>
-                <div>{errorText}</div>
+              <div className="mb-3 border-2 border-[#deb887] bg-black px-3 py-2 text-xs text-[#deb887] font-mono">
+                <div className="font-mono mb-1 text-[11px] uppercase tracking-wide">[ERROR] CLIENT ERROR</div>
+                <div>{">"} {errorText}</div>
               </div>
             )}
 
             {!responseBody && !errorText && (
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Submit the login form to see how{" "}
-                <span className="font-mono">Fingerprint</span>–backed logic
+              <p className="text-xs text-[#deb887]/80 leading-relaxed font-mono">
+                {">"} Submit the login form to see how{" "}
+                <span className="text-[#deb887]">Fingerprint</span>–backed logic
                 shapes the response. This panel always expects a JSON payload
                 like:
                 <br />
-                <span className="font-mono text-[11px]">
-                  {"{"} &quot;message&quot;: &quot;Login succeeded&quot;, ... {"}"}
+                <span className="font-mono text-[11px] text-[#deb887]/60">
+                  {">"} {"{"} &quot;message&quot;: &quot;Login succeeded&quot;, ... {"}"}
                 </span>
               </p>
             )}
 
             {responseBody && (
               <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-mono uppercase tracking-wide text-slate-400">
-                    message
+                <div className="flex items-center justify-between border-b border-[#deb887]/30 pb-1">
+                  <span className="text-[11px] font-mono uppercase tracking-wide text-[#deb887]/80">
+                    {">"} MESSAGE:
                   </span>
-                  <span className="text-xs font-semibold text-slate-50">
-                    {String(responseBody.message ?? "—")}
+                  <span className="text-xs font-semibold text-[#deb887]">
+                    {String(responseBody.message ?? "-")}
                   </span>
                 </div>
 
                 <div className="space-y-1">
-                  <div className="flex items-center justify-between text-[11px] text-slate-400">
+                  <div className="flex items-center justify-between text-[11px] text-[#deb887]/80 border-b border-[#deb887]/20 pb-1">
                     <span className="font-mono uppercase tracking-wide">
-                      Raw JSON
+                      {">"} RAW JSON
                     </span>
-                    <span className="font-mono text-slate-500">
+                    <span className="font-mono text-[#deb887]/60">
                       /api{pathname === "/" ? "" : pathname}
                     </span>
                   </div>
-                  <pre className="scmz-json">
+                  <pre className="st-json">
                     {JSON.stringify(responseBody, null, 2)}
                   </pre>
                 </div>
 
-                <div className="pt-2 border-t border-slate-800/60 mt-2 flex flex-col gap-2">
-                  <p className="text-[11px] text-slate-100 leading-snug">
+                <div className="pt-2 border-t-2 border-[#deb887] mt-2 flex flex-col gap-2">
+                  <p className="text-[11px] text-[#deb887] leading-snug font-mono">
                     {isSuccessful ? (
                       <>
-                        <span className="block mb-0.5 font-semibold text-emerald-300">
-                          This {httpStatus} response is currently allowed — but
-                          should this session really be welcome?
+                        <span className="block mb-0.5 font-semibold text-[#00ff00]">
+                          {">"} STATUS {httpStatus}: ALLOWED - Should this creature be welcome?
                         </span>
                       </>
                     ) : (
                       <>
-                        This{" "}
-                        <span className="font-mono text-red-400">
+                        {">"} STATUS{" "}
+                        <span className="font-mono text-[#ff0000]">
                           {httpStatus}
                         </span>{" "}
-                        response suggests a suspicious or blocked attempt. Open
-                        your{" "}
-                        <span className="font-mono">Fingerprint</span> dashboard
-                        to investigate this session, review identification
-                        events, and tune your rules.
+                        : SUSPICIOUS/BLOCKED from Upside-Down. Open{" "}
+                        <span className="text-[#deb887]">Fingerprint</span> dashboard
+                        to investigate session, review events, tune rules.
                       </>
                     )}
                   </p>
-                  <div className="flex flex-col items-center gap-1.5 mt-1">
+                  <div className="flex flex-col items-center gap-1.5 mt-1 overflow-visible">
                     <a
                       href={fingerprintDashboardUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="scmz-button whitespace-nowrap px-4 py-1.5 text-[11px]"
+                      className="st-button whitespace-nowrap px-4 py-1.5 text-[11px]"
                     >
-                      Explore identification event
+                      [EXPLORE EVENT]
                     </a>
-                    <span className="text-[10px] text-slate-400 font-mono uppercase tracking-wide">
-                      And then…
+                    <span className="text-[10px] text-[#deb887]/60 font-mono uppercase tracking-wide">
+                      {">"} THEN:
                     </span>
                     <a
                       href={fingerprintRulesUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="scmz-button whitespace-nowrap px-4 py-1.5 text-[11px] bg-transparent text-amber-200 border border-amber-400/80 shadow-none hover:bg-amber-500/10 hover:text-amber-100"
+                      className="st-button st-button-overflow whitespace-nowrap px-4 py-1.5 text-[11px] bg-transparent text-[#deb887] border-2 border-[#deb887] hover:bg-[#deb887] hover:text-black"
                     >
-                      Configure rules that stop malicious users
+                      [CONFIGURE RULES & STOP DEMOGORGON]
                     </a>
                   </div>
                 </div>
