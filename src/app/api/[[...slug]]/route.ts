@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(
   _req: NextRequest,
-  _context: { params: { slug?: string[] } }
+  _context: { params: Promise<{ slug?: string[] }> }
 ) {
   // Minimal contract: always return a JSON body with a "message" field.
   // Edge workers or other infrastructure can still change the HTTP status
