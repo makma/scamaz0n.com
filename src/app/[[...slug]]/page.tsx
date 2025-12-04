@@ -200,6 +200,21 @@ export default function LoginPage() {
               </div>
             </div>
 
+            <div className="mb-4 space-y-1 text-xs">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-amber-800">
+                  Scamaz0n Prime-ish
+                </span>
+                <span className="text-[11px] text-amber-700">
+                  Free phishing delivery in 2–3 business clicks.
+                </span>
+              </div>
+              <div className="text-[11px] text-slate-500">
+                ★★★★☆ 4.9 fake security rating · 2,048,312 compromised carts
+                and counting.
+              </div>
+            </div>
+
             <form onSubmit={onSubmit} className="space-y-4">
               <div className="space-y-2">
                 <label
@@ -267,9 +282,10 @@ export default function LoginPage() {
 
           {/* Response / Telemetry Panel */}
           <div className="scmz-card bg-slate-950 text-slate-50">
+            <div className="h-px w-full bg-gradient-to-r from-sky-500/40 via-violet-500/60 to-emerald-400/40 mb-3" />
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-sm font-semibold tracking-wide uppercase text-slate-300">
-                Login Response Inspector
+                Fingerprint Session Inspector
               </h2>
               <div className={`badge ${statusColor}`}>
                 <span className="font-mono text-[11px]">
