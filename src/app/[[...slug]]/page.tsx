@@ -203,7 +203,7 @@ export default function LoginPage() {
           </section>
         )}
 
-        <section className="grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start">
+        <section className="grid gap-8 lg:grid-cols-[minmax(0,2.9fr)_minmax(0,2.1fr)] items-start">
           {/* Login Card */}
           <div className="st-card">
             <div className="flex items-center justify-between mb-6 border-b-2 border-black pb-3">
