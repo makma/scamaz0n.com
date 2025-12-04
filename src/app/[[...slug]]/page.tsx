@@ -293,7 +293,7 @@ export default function LoginPage() {
                 like:
                 <br />
                 <span className="font-mono text-[11px]">
-                  {"{"} "message": "Login succeeded", ... {"}"}
+                  {"{"} &quot;message&quot;: &quot;Login succeeded&quot;, ... {"}"}
                 </span>
               </p>
             )}
@@ -323,8 +323,8 @@ export default function LoginPage() {
                   </pre>
                 </div>
 
-                <div className="pt-2 border-t border-slate-800/60 mt-2 flex items-center justify-between gap-3">
-                  <p className="text-[11px] text-slate-100 leading-snug max-w-[70%]">
+                <div className="pt-2 border-t border-slate-800/60 mt-2 flex flex-col gap-2">
+                  <p className="text-[11px] text-slate-100 leading-snug">
                     {isSuccessful ? (
                       <>
                         <span className="block mb-0.5 font-semibold text-emerald-300">
@@ -337,8 +337,8 @@ export default function LoginPage() {
                             Fingerprint
                           </span>{" "}
                           device intelligence with your own risk tolerance and
-                          business rules in the Rules Engine so the next shady
-                          login like this matches{" "}
+                          business understanding in the Rules Engine so the next
+                          shady login like this lines up with{" "}
                           <span className="font-semibold">
                             your
                             &nbsp;definition
@@ -360,12 +360,23 @@ export default function LoginPage() {
                       </>
                     )}
                   </p>
-                  <a
-                    href={fingerprintDashboardUrl}
-                    className="scmz-button whitespace-nowrap px-4 py-1.5 text-[11px]"
-                  >
-                    Open Dashboard
-                  </a>
+                  <div className="flex flex-col items-center gap-1.5 mt-1">
+                    <a
+                      href={fingerprintDashboardUrl}
+                      className="scmz-button whitespace-nowrap px-4 py-1.5 text-[11px]"
+                    >
+                      Explore identification event
+                    </a>
+                    <span className="text-[10px] text-slate-400 font-mono uppercase tracking-wide">
+                      And then…
+                    </span>
+                    <button
+                      type="button"
+                      className="scmz-button whitespace-nowrap px-4 py-1.5 text-[11px] bg-transparent text-amber-200 border border-amber-400/80 shadow-none hover:bg-amber-500/10 hover:text-amber-100"
+                    >
+                      Configure rules that stop malicious users
+                    </button>
+                  </div>
                 </div>
               </div>
             )}
